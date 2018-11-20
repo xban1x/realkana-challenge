@@ -30,6 +30,7 @@ const study = (state = defaultState, action) => {
         char: action.payload,
         shown: [...state.shown, action.payload],
         help: false,
+        correct: false,
         wrong: false
       };
     }
