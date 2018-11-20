@@ -1,0 +1,36 @@
+{
+  "name": "realkana-challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "export": "npm run build && next export",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xban1x/realkana-challenge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xban1x/realkana-challenge/issues"
+  },
+  "homepage": "https://github.com/xban1x/realkana-challenge#readme",
+  "dependencies": {
+    "next": "^7.0.2",
+    "next-redux-wrapper": "^2.0.0",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-redux": "^5.1.1",
+    "redux": "^4.0.1",
+    "redux-localstorage": "^0.4.1"
+  },
+  "devDependencies": {
+    "redux-devtools": "^3.4.2",
+    "redux-logger": "^3.0.6"
+  }
+}
