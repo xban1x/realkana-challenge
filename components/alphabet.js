@@ -5,13 +5,18 @@ import SylabbleGroup from "./sylabbleGroup";
 export default observer(
   class Alphabet extends Component {
     render() {
+      const alphabet = this.props.alphabet;
       return (
         <Fragment>
-          <div>
-            {this.props.alphabet.groups.map((group, index) => (
-              <SylabbleGroup group={group} key={index} />
-            ))}
-          </div>
+          {alphabet ? (
+            <div>
+              {alphabet.groups.map((group, index) => (
+                <SylabbleGroup group={group} key={index} />
+              ))}
+            </div>
+          ) : (
+            <div>Alphabet not found.</div>
+          )}
           <style jsx>
             {`
               div {

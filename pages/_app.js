@@ -4,17 +4,12 @@ import { Provider } from "mobx-react";
 import RootStore from "../models/rootStore";
 import Hiragana from "../hiragana.json";
 import Katakana from "../katakana.json";
-import { onPatch } from "mobx-state-tree";
 
 const rootStore = RootStore.create({
   alphabets: [Hiragana, Katakana]
 });
 
-onPatch(rootStore, patch => {
-  console.log(patch);
-});
-
-class MyApp extends App {
+export default class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
     let pageProps = {};
 
@@ -36,5 +31,3 @@ class MyApp extends App {
     );
   }
 }
-
-export default MyApp;
