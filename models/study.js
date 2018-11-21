@@ -1,26 +1,34 @@
-import { types, getParent } from "mobx-state-tree";
+import { types, getParent, getSnapshot } from "mobx-state-tree";
 import Sylabble from "./sylabble";
 
 const Study = types
   .model("Study", {
-    sylabbles: types.array(Sylabble),
+    sylabbles: types.array(Sylabble, []),
     selected: types.maybe(Sylabble),
-    shown: types.array(Sylabble),
+    shownCount: 0,
     correctCount: 0,
     wrong: false,
     help: false
   })
-  .views(self => ({
-    shownCount() {
-      return self.shown.length;
-    }
-  }))
   .actions(self => ({
-    help() {
+    afterAttach() {
+      getSnapshot(getParent(self).alphabets).forEach(alphabet => {
+        const sylabbles = alphabet.groups
+          .filter(group => group.selected)
+          .map(group => group.sylabbles)
+          .reduce((sum, cur) => [...sum, ...cur], []);
+        if (sylabbles.length > 0) {
+          self.sylabbles.push(...sylabbles);
+        }
+      });
+      self.randomSylabble();
+    },
+    showHelp() {
       self.wrong = true;
       self.help = true;
     },
-    answer(word) {
+    answer(event) {
+      const word = event.target.value;
       if (word === "") {
         return;
       }
@@ -32,27 +40,37 @@ const Study = types
         return;
       }
       // If user already got through all sylabbles just reset and start from beggining
-      if (self.sylabbles.length === self.shown.length) {
-        self.shown = [];
+      if (self.sylabbles.length === self.shownCount) {
+        self.clear();
+      } else if (!self.wrong) {
+        self.correctCount++;
       }
-      self.correctCount++;
+      event.target.value = "";
       self.randomSylabble();
     },
     randomSylabble() {
       const length = self.sylabbles.length;
+      if (length === 0) {
+        return;
+      }
       const randomIndex = Math.floor(Math.random() * Math.floor(length));
       const selected = self.sylabbles[randomIndex];
       // Do not show sylabble if it has already been shown
-      if (self.shown.indexOf(selected) > -1) {
+      if (selected.shown) {
         return self.randomSylabble();
       }
       // Reset State
       self.wrong = false;
       self.help = false;
-      // Set up the new sylabble
-      self.shown.push(selected);
-      self.selected = selected;
+      selected.shown = true;
+      self.shownCount++;
+      self.selected = getSnapshot(selected);
       return selected;
+    },
+    clear() {
+      self.sylabbles.forEach(sylabble => (sylabble.shown = false));
+      self.shownCount = 0;
+      self.correctCount = 0;
     }
   }));
 

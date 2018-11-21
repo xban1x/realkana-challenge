@@ -6,10 +6,10 @@ export default class Header extends Component {
     return (
       <Fragment>
         <Link href="/?alphabet=Hiragana">
-          <a>Hirakana</a>
+          <a>Hiragana</a>
         </Link>
         <Link href="/?alphabet=Katakana">
-          <a>Katagana</a>
+          <a>Katakana</a>
         </Link>
         <Link href="/study">
           <a>Study</a>

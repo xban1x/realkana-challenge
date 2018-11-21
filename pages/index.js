@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { inject } from "mobx-react";
+import { inject, observer } from "mobx-react";
 import Layout from "../components/layout";
 import Alphabet from "../components/alphabet";
 
@@ -19,4 +19,4 @@ class IndexPage extends Component {
   }
 }
 
-export default inject("rootStore")(IndexPage);
+export default inject("rootStore")(observer(IndexPage));

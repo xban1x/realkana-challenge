@@ -7,7 +7,7 @@
         { "word": "i", "character": "い" },
         { "word": "u", "character": "う" },
         { "word": "e", "character": "え" },
-        { "word": "u", "character": "う" }
+        { "word": "o", "character": "お" }
       ]
     },
     {
@@ -88,7 +88,7 @@
         {},
         {},
         {},
-        { "word": "o", "character": "お" }
+        { "word": "wo", "character": "を" }
       ]
     },
     { "sylabbles": [{}, {}, {}, {}, { "word": "n", "character": "ん" }] },
