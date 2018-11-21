@@ -1,8 +1,5 @@
 import React from "react";
 import App, { Container } from "next/app";
-import { Provider } from "react-redux";
-import withRedux from "next-redux-wrapper";
-import makeStore from "./../util/makeStore";
 
 class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
@@ -19,12 +16,10 @@ class MyApp extends App {
     const { Component, pageProps, store } = this.props;
     return (
       <Container>
-        <Provider store={store}>
-          <Component {...pageProps} />
-        </Provider>
+        <Component {...pageProps} />
       </Container>
     );
   }
 }
 
-export default withRedux(makeStore)(MyApp);
+export default MyApp;
