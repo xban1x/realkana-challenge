@@ -5,11 +5,11 @@ export default class Header extends Component {
   render() {
     return (
       <Fragment>
-        <Link href="/hirakana">
-          <a>Hirakana</a>
+        <Link href="/?alphabet=Hiragana">
+          <a>Hiragana</a>
         </Link>
-        <Link href="/katagana">
-          <a>Katagana</a>
+        <Link href="/?alphabet=Katakana">
+          <a>Katakana</a>
         </Link>
         <Link href="/study">
           <a>Study</a>

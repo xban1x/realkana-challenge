@@ -1,4 +1,4 @@
-const Hirakana = require("./hirakana.json");
+const Hirakana = require("./hiragana.json");
 
 const alphabet_hiragana = `U+3041
 ぁ
@@ -557,7 +557,7 @@ alphabetSplit.forEach(sylabble => {
       if (
         syl.word.toLowerCase().trim() === alphabet_word.toLowerCase().trim()
       ) {
-        syl.sylabble = alphabet_sylabble;
+        syl.character = alphabet_sylabble;
       }
     }
   }

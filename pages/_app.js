@@ -1,8 +1,18 @@
 import React from "react";
 import App, { Container } from "next/app";
-import { Provider } from "react-redux";
-import withRedux from "next-redux-wrapper";
-import makeStore from "./../util/makeStore";
+import { Provider } from "mobx-react";
+import RootStore from "../models/rootStore";
+import Hiragana from "../hiragana.json";
+import Katakana from "../katakana.json";
+import { onPatch } from "mobx-state-tree";
+
+const rootStore = RootStore.create({
+  alphabets: [Hiragana, Katakana]
+});
+
+onPatch(rootStore, patch => {
+  console.log(patch);
+});
 
 class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
@@ -16,10 +26,10 @@ class MyApp extends App {
   }
 
   render() {
-    const { Component, pageProps, store } = this.props;
+    const { Component, pageProps } = this.props;
     return (
       <Container>
-        <Provider store={store}>
+        <Provider rootStore={rootStore}>
           <Component {...pageProps} />
         </Provider>
       </Container>
@@ -27,4 +37,4 @@ class MyApp extends App {
   }
 }
 
-export default withRedux(makeStore)(MyApp);
+export default MyApp;
