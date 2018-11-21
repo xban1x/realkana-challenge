@@ -1,0 +1,141 @@
+{
+  "name": "Katakana",
+  "groups": [
+    {
+      "sylabbles": [
+        { "word": "a", "character": "ア" },
+        { "word": "i", "character": "イ" },
+        { "word": "u", "character": "ウ" },
+        { "word": "e", "character": "エ" },
+        { "word": "u", "character": "ウ" }
+      ]
+    },
+    {
+      "sylabbles": [
+        { "word": "ka", "character": "カ" },
+        { "word": "ki", "character": "キ" },
+        { "word": "ku", "character": "ク" },
+        { "word": "ke", "character": "ケ" },
+        { "word": "ko", "character": "コ" }
+      ]
+    },
+    {
+      "sylabbles": [
+        { "word": "sa", "character": "サ" },
+        { "word": "shi", "character": "い" },
+        { "word": "su", "character": "ス" },
+        { "word": "se", "character": "セ" },
+        { "word": "so", "character": "ソ" }
+      ]
+    },
+    {
+      "sylabbles": [
+        { "word": "ta", "character": "タ" },
+        { "word": "chi", "character": "い" },
+        { "word": "tsu", "character": "う" },
+        { "word": "te", "character": "テ" },
+        { "word": "to", "character": "ト" }
+      ]
+    },
+    {
+      "sylabbles": [
+        { "word": "na", "character": "ナ" },
+        { "word": "ni", "character": "ニ" },
+        { "word": "nu", "character": "ヌ" },
+        { "word": "ne", "character": "ネ" },
+        { "word": "no", "character": "ノ" }
+      ]
+    },
+    {
+      "sylabbles": [
+        { "word": "ha", "character": "ハ" },
+        { "word": "hi", "character": "ヒ" },
+        { "word": "fu", "character": "う" },
+        { "word": "he", "character": "ヘ" },
+        { "word": "ho", "character": "ホ" }
+      ]
+    },
+    {
+      "sylabbles": [
+        { "word": "ma", "character": "マ" },
+        { "word": "mi", "character": "ミ" },
+        { "word": "mu", "character": "ム" },
+        { "word": "me", "character": "メ" },
+        { "word": "mo", "character": "モ" }
+      ]
+    },
+    {
+      "sylabbles": [
+        { "word": "ya", "character": "ヤ" },
+        {},
+        { "word": "yu", "character": "ユ" },
+        {},
+        { "word": "yo", "character": "ヨ" }
+      ]
+    },
+    {
+      "sylabbles": [
+        { "word": "ra", "character": "ラ" },
+        { "word": "ri", "character": "リ" },
+        { "word": "ru", "character": "ル" },
+        { "word": "re", "character": "レ" },
+        { "word": "ro", "character": "ロ" }
+      ]
+    },
+    {
+      "sylabbles": [
+        { "word": "wa", "character": "ワ" },
+        {},
+        {},
+        {},
+        { "word": "o", "character": "オ" }
+      ]
+    },
+    { "sylabbles": [{}, {}, {}, {}, { "word": "n", "character": "ン" }] },
+    {
+      "sylabbles": [
+        { "word": "ga", "character": "ガ" },
+        { "word": "gi", "character": "ギ" },
+        { "word": "gu", "character": "グ" },
+        { "word": "ge", "character": "ゲ" },
+        { "word": "go", "character": "ゴ" }
+      ]
+    },
+    {
+      "sylabbles": [
+        { "word": "za", "character": "ザ" },
+        { "word": "ji", "character": "り" },
+        { "word": "zu", "character": "ズ" },
+        { "word": "ze", "character": "ゼ" },
+        { "word": "zo", "character": "ゾ" }
+      ]
+    },
+    {
+      "sylabbles": [
+        { "word": "da", "character": "ダ" },
+        { "word": "ji", "character": "り" },
+        { "word": "zu", "character": "ズ" },
+        { "word": "de", "character": "デ" },
+        { "word": "do", "character": "ド" }
+      ]
+    },
+    {
+      "sylabbles": [
+        { "word": "ba", "character": "バ" },
+        { "word": "bi", "character": "ビ" },
+        { "word": "bu", "character": "ブ" },
+        { "word": "be", "character": "ベ" },
+        { "word": "bo", "character": "ボ" }
+      ]
+    },
+    {
+      "sylabbles": [
+        { "word": "pa", "character": "パ" },
+        { "word": "pi", "character": "ピ" },
+        { "word": "pu", "character": "プ" },
+        { "word": "pe", "character": "ペ" },
+        { "word": "po", "character": "ポ" }
+      ]
+    }
+  ]
+}
