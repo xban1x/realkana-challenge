@@ -18,7 +18,7 @@ const Study = types
           .map(group => group.sylabbles)
           .reduce((sum, cur) => [...sum, ...cur], []);
         if (sylabbles.length > 0) {
-          self.sylabbles.push(...sylabbles);
+          self.sylabbles.push(...sylabbles.filter(sylabble => sylabble.word));
         }
       });
       self.randomSylabble();
