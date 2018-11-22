@@ -1,8 +1,9 @@
-import React, { Component, Fragment } from "react";
+import React, { Component, Fragment, FormEvent } from "react";
 import { inject, observer } from "mobx-react";
-import Layout from "../components/layout";
+import Layout from "./../components/layout";
+import { IRootStoreProps } from "../models/rootStore";
 
-class StudyPage extends Component {
+class StudyPage extends Component<IRootStoreProps> {
   componentWillMount() {
     this.props.rootStore.createStudy();
   }
@@ -19,7 +20,7 @@ class StudyPage extends Component {
     );
   }
 
-  onSpaceDown(event) {
+  onSpaceDown(event: KeyboardEvent) {
     const study = this.props.rootStore.study;
     if (!study) {
       return;
@@ -39,9 +40,12 @@ class StudyPage extends Component {
 
   render() {
     const study = this.props.rootStore.study;
+    if (!study) {
+      return <Layout />;
+    }
     return (
       <Layout>
-        {study.sylabbles.length > 0 ? (
+        {study.hasSylabbles() ? (
           <Fragment>
             <div>{study.selected && study.selected.character}</div>
 
@@ -51,7 +55,9 @@ class StudyPage extends Component {
 
             <input
               type="text"
-              onChange={event => study.answer(event.nativeEvent)}
+              onChange={(event: FormEvent<HTMLInputElement>) =>
+                study.answer(event)
+              }
             />
 
             <Fragment>

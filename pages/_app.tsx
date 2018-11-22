@@ -1,9 +1,9 @@
-import React from "react";
-import App, { Container } from "next/app";
+import * as React from "react";
+import App, { AppComponentContext, Container } from "next/app";
 import { Provider } from "mobx-react";
 import RootStore from "../models/rootStore";
-import Hiragana from "../hiragana.json";
-import Katakana from "../katakana.json";
+import Hiragana from "./../hiragana.json";
+import Katakana from "./../katakana.json";
 import { onPatch } from "mobx-state-tree";
 
 const rootStore = RootStore.create({
@@ -15,12 +15,13 @@ onPatch(rootStore, patch => {
 });
 
 class MyApp extends App {
-  static async getInitialProps({ Component, ctx }) {
-    let pageProps = {};
-
-    if (Component.getInitialProps) {
-      pageProps = await Component.getInitialProps(ctx);
-    }
+  static async getInitialProps({
+    Component,
+    ctx
+  }: AppComponentContext): Promise<{ pageProps: Record<string, any> }> {
+    const pageProps = Component.getInitialProps
+      ? await Component.getInitialProps(ctx)
+      : {};
 
     return { pageProps };
   }
