@@ -25,5 +25,6 @@ To build application for production run `npm run export` or `yarn export`. Files
 ## Built With
 
 - [Next.js](https://nextjs.org/) - Framework
+- [TypeScript](https://www.typescriptlang.org/) - Typings Support
 - [React](https://reactjs.org/) - Frontend library
 - [MobX State Tree](https://github.com/mobxjs/mobx-state-tree) - State management
