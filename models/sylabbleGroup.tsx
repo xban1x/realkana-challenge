@@ -1,4 +1,4 @@
-import { types } from "mobx-state-tree";
+import { types, Instance } from "mobx-state-tree";
 import Sylabble from "./sylabble";
 
 const SylabbleGroup = types
@@ -9,8 +9,13 @@ const SylabbleGroup = types
   .actions(self => ({
     toggleSelect() {
       self.selected = !self.selected;
-      console.log(self);
     }
   }));
+
+export interface ISylabbleGroup extends Instance<typeof SylabbleGroup> {}
+
+export interface ISylabbleGroupProps {
+  group: ISylabbleGroup;
+}
 
 export default SylabbleGroup;
