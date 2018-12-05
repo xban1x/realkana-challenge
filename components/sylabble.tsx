@@ -1,8 +1,8 @@
-import React, { Component, Fragment } from "react";
+import React, { Component, Fragment, HTMLAttributes } from "react";
 import { ISylabbleProps } from "models/sylabble";
 
 export default class Sylabble extends Component<
-  ISylabbleProps & React.HTMLAttributes<HTMLDivElement>
+  ISylabbleProps & HTMLAttributes<HTMLDivElement>
 > {
   render() {
     const sylabble = this.props.sylabble;

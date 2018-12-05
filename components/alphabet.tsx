@@ -7,16 +7,22 @@ class Alphabet extends Component<IAlphabetProps> {
   render() {
     return (
       <Fragment>
-        <div>
+        <div className="table">
           {this.props.alphabet.groups.map((group, index) => (
-            <SylabbleGroup group={group} key={index} />
+            <div className="group" key={index}>
+              <SylabbleGroup group={group} />
+            </div>
           ))}
         </div>
         <style jsx>
           {`
-            div {
+            div.table {
               display: flex;
               flex-direction: row;
+            }
+            div.group {
+              border-left: 1px solid #e3e3e3;
+              border-right: 1px soid #e3e3e3;
             }
           `}
         </style>

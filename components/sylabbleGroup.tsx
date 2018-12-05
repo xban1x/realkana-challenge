@@ -8,7 +8,7 @@ class SylabbleGroup extends Component<ISylabbleGroupProps> {
     const group = this.props.group;
     return (
       <Fragment>
-        <div className="group">
+        <div>
           {group.sylabbles.map((sylabble, index) => (
             <Sylabble className="sylabble" sylabble={sylabble} key={index} />
           ))}
@@ -21,7 +21,7 @@ class SylabbleGroup extends Component<ISylabbleGroupProps> {
         </div>
         <style jsx>
           {`
-            .group {
+            div {
               display: flex;
               flex-direction: column;
               align-items: center;
